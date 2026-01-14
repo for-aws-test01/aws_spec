@@ -72,11 +72,11 @@
 
 **验收标准**:
 - [x] 后端安装 Go 依赖：Gin, GORM, JWT, bcrypt, CORS
-- [x] 前端安装 npm 依赖：Webpack, Babel, LessJS, Express
+- [-] 前端安装 npm 依赖：Webpack, Babel, LessJS, Express
 - [x] 创建后端 `.env.example` 文件
 - [x] 创建前端 `webpack.config.js` 文件
 - [x] 配置 Webpack 开发和生产环境
-- [-] 配置 ESLint
+- [x] 配置 ESLint
 
 **技术要点**:
 ```bash
