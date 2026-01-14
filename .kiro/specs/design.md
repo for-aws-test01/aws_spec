@@ -27,11 +27,20 @@
 
 #### 前端技术栈
 - **编程语言**: 原生 JavaScript (ES6+)
-- **UI 框架**: Ant Design CSS
+- **UI 框架**: LessJS 组件库 (https://lessjs.shoplazza.com/)
+- **样式**: 原生 CSS
 - **构建工具**: Webpack 5
 - **路由方式**: History API
 - **状态管理**: localStorage + Cookie
 - **HTTP 客户端**: Fetch API
+
+#### 前端技术约束
+- **必须使用 LessJS 组件库**：参考 https://lessjs.shoplazza.com/ 最小化自定义 JavaScript
+- **样式使用原生 CSS**：不使用 CSS 预处理器，使用原生 CSS 编写样式
+- **必须遵循 Shoplazza 主题开发 Constitution 规范**
+- **响应式断点**：960px（移动端 <960px，PC端 ≥960px）
+- **必须满足 WCAG 2.1 AA 级别可访问性标准**
+- **代码必须通过 ESLint 检查**
 
 #### 开发工具
 - **版本控制**: Git
@@ -1696,6 +1705,38 @@ GET /api/profile
 └─────────────────────────────────────────────────────────────┘
 ```
 
+### 5.1.1 前端开发约束
+
+#### LessJS 组件库使用
+- 必须使用 LessJS 组件库（https://lessjs.shoplazza.com/）
+- 最小化自定义 JavaScript 代码
+- 优先使用 LessJS 提供的组件和工具函数
+- 自定义组件需遵循 LessJS 的设计模式
+
+#### Shoplazza Constitution 规范
+- 遵循 Shoplazza 主题开发 Constitution 规范
+- 代码结构和命名遵循规范要求
+- 组件开发遵循最佳实践
+
+#### 响应式设计
+- **断点定义**：960px
+  - 移动端：< 960px
+  - PC端：≥ 960px
+- 使用媒体查询实现响应式布局
+- 移动端优先设计原则
+
+#### 可访问性标准
+- 必须满足 WCAG 2.1 AA 级别标准
+- 所有交互元素必须可键盘访问
+- 提供适当的 ARIA 标签
+- 确保足够的颜色对比度
+- 图片必须提供 alt 文本
+
+#### 代码质量
+- 代码必须通过 ESLint 检查
+- 使用 ESLint 配置文件统一代码风格
+- 提交前必须修复所有 ESLint 错误
+
 ### 5.2 页面结构
 
 #### 5.2.1 员工端页面
@@ -2747,6 +2788,7 @@ frontend/
 │       └── style.css
 ├── server.js                       # Express 服务器
 ├── webpack.config.js               # Webpack 配置
+├── .eslintrc.json                  # ESLint 配置
 ├── package.json                    # NPM 依赖
 ├── package-lock.json               # NPM 依赖锁定
 ├── Dockerfile                      # Docker 镜像构建
@@ -2779,6 +2821,46 @@ awsomeshop/
 - 使用 const/let，避免 var
 - 函数命名：驼峰命名法
 - 常量命名：大写字母+下划线
+- 必须通过 ESLint 检查
+
+#### ESLint 配置
+```json
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "warn",
+    "no-unused-vars": "error",
+    "prefer-const": "error",
+    "no-var": "error",
+    "max-len": ["error", { "code": 120 }]
+  }
+}
+```
+
+#### 可访问性规范
+- 遵循 WCAG 2.1 AA 级别标准
+- 所有交互元素必须可键盘访问（Tab 键导航）
+- 提供适当的 ARIA 标签和角色
+- 确保颜色对比度至少为 4.5:1（正常文本）
+- 图片必须提供有意义的 alt 文本
+- 表单控件必须有关联的 label
+- 错误提示必须清晰可读
+
+#### 响应式设计规范
+- 断点：960px
+  - 移动端：< 960px
+  - PC端：≥ 960px
+- 使用媒体查询：`@media (max-width: 959px)` 和 `@media (min-width: 960px)`
+- 移动端优先设计
+- 触摸目标最小尺寸：44x44px
 
 ### 16.2 Git 规范
 
