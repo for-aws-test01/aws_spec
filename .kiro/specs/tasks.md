@@ -210,8 +210,8 @@ const (
 **验收标准**:
 - [x] 实现 `internal/logger/service.go` 应用日志服务
 - [x] 实现 `internal/logger/model.go` 应用日志模型
-- [ ] 实现 `internal/audit/service.go` 审计日志服务
-- [ ] 实现 `internal/audit/model.go` 审计日志模型
+- [x] 实现 `internal/audit/service.go` 审计日志服务
+- [x] 实现 `internal/audit/model.go` 审计日志模型
 - [ ] 实现日志写入数据库
 - [ ] 实现日志级别过滤（INFO, WARNING, ERROR）
 
