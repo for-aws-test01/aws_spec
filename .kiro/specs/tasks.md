@@ -48,7 +48,7 @@
 - [ ] 创建前端项目目录 `frontend/` 及子目录
 - [x] 初始化 Git 仓库
 - [x] 创建 `.gitignore` 文件
-- [-] 创建 `README.md` 文件
+- [x] 创建 `README.md` 文件
 
 **技术要点**:
 - 参考设计文档第 15 节的项目结构
@@ -67,7 +67,7 @@
 配置后端和前端的开发环境，安装必要的依赖。
 
 **验收标准**:
-- [ ] 后端安装 Go 依赖：Gin, GORM, JWT, bcrypt, CORS
+- [-] 后端安装 Go 依赖：Gin, GORM, JWT, bcrypt, CORS
 - [ ] 前端安装 npm 依赖：Webpack, Babel, Ant Design CSS
 - [ ] 创建后端 `.env.example` 文件
 - [ ] 创建前端 `webpack.config.js` 文件
