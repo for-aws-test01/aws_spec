@@ -111,7 +111,7 @@ npm install eslint eslint-config-airbnb-base
 **验收标准**:
 - [x] 创建数据库 `awsomeshop`
 - [x] 编写 `schema.sql` 创建所有表
-- [-] 编写 `seed.sql` 插入初始数据
+- [ ] 编写 `seed.sql` 插入初始数据
 - [ ] 执行迁移脚本
 - [ ] 验证表结构和初始数据
 
@@ -166,12 +166,12 @@ type Config struct {
 实现统一的 API 响应格式和错误码定义。
 
 **验收标准**:
-- [ ] 实现 `internal/common/response.go` 响应格式
-- [ ] 实现 `internal/common/errors.go` 错误码定义
-- [ ] 定义所有错误码常量
-- [ ] 实现成功响应函数
-- [ ] 实现错误响应函数
-- [ ] 实现分页响应函数
+- [x] 实现 `internal/common/response.go` 响应格式
+- [x] 实现 `internal/common/errors.go` 错误码定义
+- [x] 定义所有错误码常量
+- [x] 实现成功响应函数
+- [x] 实现错误响应函数
+- [x] 实现分页响应函数
 
 **技术要点**:
 ```go
@@ -208,8 +208,8 @@ const (
 实现应用日志和审计日志模块。
 
 **验收标准**:
-- [ ] 实现 `internal/logger/service.go` 应用日志服务
-- [ ] 实现 `internal/logger/model.go` 应用日志模型
+- [x] 实现 `internal/logger/service.go` 应用日志服务
+- [x] 实现 `internal/logger/model.go` 应用日志模型
 - [ ] 实现 `internal/audit/service.go` 审计日志服务
 - [ ] 实现 `internal/audit/model.go` 审计日志模型
 - [ ] 实现日志写入数据库
