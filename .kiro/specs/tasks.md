@@ -3,10 +3,14 @@
 ## 文档信息
 
 - **项目名称**: AWSomeShop 内部员工福利电商系统
-- **文档版本**: 1.0
+- **文档版本**: 1.1
 - **创建日期**: 2026-01-14
+- **更新日期**: 2026-01-14
 - **文档状态**: 待审批
 - **基于文档**: requirements.md v1.0, design.md v1.0
+
+**版本更新说明**:
+- v1.1 (2026-01-14): 更新前端技术栈，将 Ant Design 替换为 LessJS 组件库，增加可访问性和 ESLint 要求
 
 ## 1. 任务概述
 
@@ -67,11 +71,12 @@
 配置后端和前端的开发环境，安装必要的依赖。
 
 **验收标准**:
-- [-] 后端安装 Go 依赖：Gin, GORM, JWT, bcrypt, CORS
-- [ ] 前端安装 npm 依赖：Webpack, Babel, Ant Design CSS
+- [x] 后端安装 Go 依赖：Gin, GORM, JWT, bcrypt, CORS
+- [ ] 前端安装 npm 依赖：Webpack, Babel, LessJS, Express
 - [ ] 创建后端 `.env.example` 文件
 - [ ] 创建前端 `webpack.config.js` 文件
 - [ ] 配置 Webpack 开发和生产环境
+- [ ] 配置 ESLint
 
 **技术要点**:
 ```bash
@@ -87,7 +92,9 @@ go get -u github.com/gin-contrib/cors
 npm install webpack webpack-cli webpack-dev-server
 npm install babel-loader @babel/core @babel/preset-env
 npm install css-loader style-loader
-npm install antd
+npm install express
+npm install eslint eslint-config-airbnb-base
+# LessJS 组件库通过 CDN 或 npm 引入
 ```
 
 ---
@@ -1230,7 +1237,7 @@ class API {
 - [ ] 创建 toast.js
 - [ ] 实现 showToast 函数
 - [ ] 支持不同类型（success, error, info）
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
 - [ ] 自动消失（3秒）
 - [ ] 测试提示显示
 
@@ -1248,7 +1255,7 @@ class API {
 **验收标准**:
 - [ ] 创建 pagination.js
 - [ ] 实现分页 UI
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
 - [ ] 支持页码切换
 - [ ] 支持每页数量设置
 - [ ] 触发回调函数
@@ -1271,8 +1278,9 @@ class API {
 - [ ] 显示用户信息
 - [ ] 实现登出按钮
 - [ ] 根据角色显示不同菜单
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
 - [ ] 测试导航功能
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
 
 
 ---
@@ -1294,7 +1302,9 @@ class API {
 - [ ] 保存用户信息到 localStorage
 - [ ] 根据角色跳转（员工→产品列表，管理员→系统概况）
 - [ ] 显示错误提示
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1312,7 +1322,10 @@ class API {
 - [ ] 显示产品图片、名称、积分、状态
 - [ ] 实现分页
 - [ ] 点击卡片跳转到详情页
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1332,7 +1345,10 @@ class API {
 - [ ] 根据状态禁用按钮（下架/积分不足）
 - [ ] 调用兑换 API
 - [ ] 显示成功/错误提示
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1348,7 +1364,10 @@ class API {
 - [ ] 调用个人信息 API
 - [ ] 显示所有个人字段
 - [ ] 只读显示（不可编辑）
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1366,7 +1385,10 @@ class API {
 - [ ] 调用积分日志 API
 - [ ] 表格显示日志列表
 - [ ] 实现分页
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1385,7 +1407,10 @@ class API {
 - [ ] 实现分页
 - [ ] 点击查看详情
 - [ ] 实现取消订单按钮（pending 状态）
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1403,7 +1428,10 @@ class API {
 - [ ] 显示产品快照
 - [ ] 显示审核信息
 - [ ] 实现取消订单按钮
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1420,7 +1448,10 @@ class API {
 - [ ] 实现表单验证
 - [ ] 调用修改密码 API
 - [ ] 显示成功/错误提示
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 
 ---
@@ -1439,7 +1470,10 @@ class API {
 - [ ] 调用系统概况 API
 - [ ] 卡片布局显示统计数据
 - [ ] 显示所有统计指标
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1458,7 +1492,10 @@ class API {
 - [ ] 实现分页
 - [ ] 实现操作按钮（查看、编辑、重置密码）
 - [ ] 实现创建员工按钮
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1476,7 +1513,10 @@ class API {
 - [ ] 调用创建员工 API
 - [ ] 显示成功/错误提示
 - [ ] 成功后跳转到员工列表
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1496,7 +1536,10 @@ class API {
 - [ ] 调用更新员工 API
 - [ ] 实现重置密码功能
 - [ ] 显示成功/错误提示
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1515,7 +1558,10 @@ class API {
 - [ ] 实现分页
 - [ ] 实现操作按钮（编辑、删除、上架/下架）
 - [ ] 实现创建产品按钮
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1534,7 +1580,10 @@ class API {
 - [ ] 调用创建产品 API
 - [ ] 显示成功/错误提示
 - [ ] 成功后跳转到产品列表
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1555,7 +1604,10 @@ class API {
 - [ ] 实现删除功能
 - [ ] 实现上架/下架功能
 - [ ] 显示成功/错误提示
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1575,7 +1627,10 @@ class API {
 - [ ] 调用发放积分 API
 - [ ] 调用批量发放积分 API
 - [ ] 显示成功/错误提示
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1592,7 +1647,10 @@ class API {
 - [ ] 表格显示所有日志
 - [ ] 显示用户、操作人、金额、原因、类型
 - [ ] 实现分页
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1611,7 +1669,10 @@ class API {
 - [ ] 显示订单号、员工、产品、状态
 - [ ] 实现分页
 - [ ] 实现操作按钮（核销、拒绝、查看详情）
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 ---
 
@@ -1631,7 +1692,10 @@ class API {
 - [ ] 实现拒绝功能（填写原因）
 - [ ] 调用核销/拒绝 API
 - [ ] 显示成功/错误提示
-- [ ] 使用 Ant Design 样式
+- [ ] 使用 LessJS 组件或原生 CSS 样式
+- [ ] 响应式设计（断点 960px）
+- [ ] 满足 WCAG 2.1 AA 可访问性标准
+- [ ] 通过 ESLint 检查
 
 
 ---
@@ -2041,7 +2105,7 @@ TASK-085
 
 | 角色 | 姓名 | 审批状态 | 审批日期 | 备注 |
 |------|------|----------|----------|------|
-| 技术负责人 | | 待审批 | | |
+| 技术负责人 | | 待审批 | | v1.1 更新：LessJS + 可访问性 |
 | 项目经理 | | 待审批 | | |
 | 产品经理 | | 待审批 | | |
 
