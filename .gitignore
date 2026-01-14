@@ -1,0 +1,36 @@
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Build outputs
+dist/
+build/
+node_modules/
+vendor/
+
+# Environment variables
+.env
+.env.local
+
+# Database
+*.db
+*.sqlite
+
+# Uploads
+uploads/
+
+# Coverage
+coverage/
+*.out
