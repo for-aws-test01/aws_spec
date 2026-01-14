@@ -109,9 +109,9 @@ npm install eslint eslint-config-airbnb-base
 创建数据库和表结构，执行初始化脚本。
 
 **验收标准**:
-- [ ] 创建数据库 `awsomeshop`
-- [ ] 编写 `schema.sql` 创建所有表
-- [ ] 编写 `seed.sql` 插入初始数据
+- [x] 创建数据库 `awsomeshop`
+- [x] 编写 `schema.sql` 创建所有表
+- [-] 编写 `seed.sql` 插入初始数据
 - [ ] 执行迁移脚本
 - [ ] 验证表结构和初始数据
 
