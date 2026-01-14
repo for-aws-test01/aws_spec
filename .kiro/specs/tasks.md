@@ -138,7 +138,7 @@ npm install eslint eslint-config-airbnb-base
 - [x] 实现 `pkg/config/config.go` 配置管理
 - [x] 从 `.env` 文件读取配置
 - [x] 实现数据库连接池
-- [-] 实现优雅关闭
+- [x] 实现优雅关闭
 
 **技术要点**:
 ```go

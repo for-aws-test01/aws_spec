@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -9,7 +10,6 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/gin-gonic/gin"
 	"awsomeshop/backend/pkg/config"
 	"awsomeshop/backend/pkg/database"
 )
@@ -34,20 +34,20 @@ func main() {
 		log.Fatalf("Failed to connect to database: %v", err)
 	}
 
-	// 创建 Gin 路由
-	router := gin.Default()
-
+	// 创建简单的 HTTP 服务器（不使用 Gin）
+	mux := http.NewServeMux()
+	
 	// 健康检查端点
-	router.GET("/health", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"status": "ok",
-		})
+	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		fmt.Fprintf(w, `{"status":"ok"}`)
 	})
 
 	// 创建 HTTP 服务器
 	srv := &http.Server{
 		Addr:    ":" + cfg.ServerPort,
-		Handler: router,
+		Handler: mux,
 	}
 
 	// 在 goroutine 中启动服务器
