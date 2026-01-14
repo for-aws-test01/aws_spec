@@ -1,0 +1,16 @@
+{
+  "name": "awsomeshop-frontend",
+  "version": "1.0.0",
+  "description": "AWSomeShop Frontend - Internal Employee Benefits E-commerce System",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "awsomeshop",
+    "frontend",
+    "ecommerce"
+  ],
+  "author": "",
+  "license": "ISC"
+}
