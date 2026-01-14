@@ -72,7 +72,7 @@
 
 **验收标准**:
 - [x] 后端安装 Go 依赖：Gin, GORM, JWT, bcrypt, CORS
-- [-] 前端安装 npm 依赖：Webpack, Babel, LessJS, Express
+- [x] 前端安装 npm 依赖：Webpack, Babel, LessJS, Express
 - [x] 创建后端 `.env.example` 文件
 - [x] 创建前端 `webpack.config.js` 文件
 - [x] 配置 Webpack 开发和生产环境
@@ -1070,8 +1070,8 @@ tx.Commit()
 配置 Webpack 构建流程。
 
 **验收标准**:
-- [ ] 配置 webpack.config.js
-- [ ] 配置入口和输出
+- [x] 配置 webpack.config.js
+- [x] 配置入口和输出
 - [ ] 配置 Babel 转译
 - [ ] 配置 CSS 加载
 - [ ] 配置开发服务器
@@ -1111,7 +1111,7 @@ module.exports = {
 - [ ] 托管 dist 目录
 - [ ] 配置 History 路由支持
 - [ ] 所有路由返回 index.html
-- [ ] 监听 8000 端口
+- [-] 监听 8000 端口
 - [ ] 测试服务器启动
 
 **技术要点**:

@@ -25,9 +25,7 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-            },
+            // Babel configuration is in .babelrc file
           },
         },
         // CSS files
@@ -80,6 +78,22 @@ module.exports = (env, argv) => {
     // Optimization
     optimization: {
       minimize: isProduction,
+      splitChunks: isProduction ? {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            priority: 10,
+          },
+          common: {
+            minChunks: 2,
+            priority: 5,
+            reuseExistingChunk: true,
+          },
+        },
+      } : false,
+      runtimeChunk: isProduction ? 'single' : false,
     },
 
     // Resolve configuration
