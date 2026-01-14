@@ -49,7 +49,7 @@
 **验收标准**:
 - [x] 创建根目录 `awsomeshop/`
 - [x] 创建后端项目目录 `backend/` 及子目录
-- [ ] 创建前端项目目录 `frontend/` 及子目录
+- [x] 创建前端项目目录 `frontend/` 及子目录
 - [x] 初始化 Git 仓库
 - [x] 创建 `.gitignore` 文件
 - [x] 创建 `README.md` 文件
@@ -72,7 +72,7 @@
 
 **验收标准**:
 - [x] 后端安装 Go 依赖：Gin, GORM, JWT, bcrypt, CORS
-- [ ] 前端安装 npm 依赖：Webpack, Babel, LessJS, Express
+- [-] 前端安装 npm 依赖：Webpack, Babel, LessJS, Express
 - [ ] 创建后端 `.env.example` 文件
 - [ ] 创建前端 `webpack.config.js` 文件
 - [ ] 配置 Webpack 开发和生产环境
